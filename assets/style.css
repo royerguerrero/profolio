@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+:root {
+  --dark: #131212;
+  --white: #f5f5f5;
+  --green: #d1ff00;
+}
+
+@font-face {
+  font-family: "MonumentExtend";
+  src: url("./fonts/MonumentExtended-Regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "MonumentExtend";
+  src: url("./fonts/MonumentExtended-Ultrabold.otf");
+  font-weight: bold;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: var(--white) 0.5px solid;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "MonumentExtend", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--green);
+  text-transform: uppercase;
+  transition: border 400ms;
+}
+
+a:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+.link {
+  border: transparent 3px solid;
+  border-right: none;
+  border-left: none;
+  padding: 10px 0px;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  padding: 8px 12px;
+  border: transparent solid 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 8px 0;
+  transition: 400ms color, 400ms background, 400ms border;
+}
+
+.btn-primary {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--green);
+}
+
+.btn-secondary {
+  background-color: var(--dark);
+  color: var(--green);
+}
+
+.btn-secondary:hover {
+  border-color: var(--green);
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  font-size: 16px;
+  font-size: 20px;
+}
+
+header {
+  width: 100%;
+  border-bottom: var(--white) solid 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 35px;
+  position: fixed;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  z-index: 2;
+}
+
+header > h1 {
+  font-size: 30px;
+}
+
+.menu > ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+main {
+  scroll-snap-type: proximity;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+#home {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 50px;
+  padding: 0 50px;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
+    url("img/cover-main-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#home > div:first-child > h2 {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+.back-card {
+  background-color: var(--green);
+  color: var(--dark);
+  padding: 0px 5px;
+  font-weight: normal;
+}
+
+#home > div:first-child > p {
+  width: 90%;
+}
+
+#home > div:last-child {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+#home > div:last-child > .social-media {
+  font-size: 14px;
+  margin-bottom: 50px;
+  text-align: end;
+  z-index: 1;
+}
+
+#home > div:last-child > .social-media > a {
+  border-bottom: transparent 3px solid;
+  margin-left: 15px;
+  padding: 10px 0;
+}
+
+#home > div:last-child > .social-media > a:hover {
+  border-color: var(--white);
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-template-rows: 32vh 120px 70vh;
+  text-align: center;
+  column-gap: 15px;
+  padding: 50px;
+  position: absolute;
+  top: 70vh;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+}
+
+#projects > h2 {
+  font-size: 52px;
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+
+.project {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
+    url("img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-end;
+  padding: 25px;
+  grid-row: 3 / 4;
+  transition: 400ms ease-in-out;
+  border: var(--green) 0px solid;
+}
+
+.project:hover {
+  cursor: pointer;
+  transition: 400ms ease-in-out;
+  border: var(--green) 25px solid;
+}
+
+.project > h2 {
+  font-size: 35px;
+  width: auto;
+}
+
+.project > p {
+  text-transform: none;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 400ms ease;
+  background: -webkit-linear-gradient(var(--white), var(--dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#projects > a:first-child {
+  grid-row: 1 / 4;
+}
+
+#skills {
+  text-align: center;
+  margin: 100vh auto;
+}
+
+#skills > h2 {
+  font-size: 60px;
+}
+
+#skills > p {
+  width: 60%;
+  margin: auto;
+}
+
+.tech-stack {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--green);
+  color: var(--dark);
+}
+
+.tech-stack > div > h3 {
+  color: var(--dark);
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.tech-stack > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 170%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+  /* Starting position */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  /* Apply animation to this element */
+  -moz-animation: scroll-left 45s linear infinite;
+  -webkit-animation: scroll-left 45s linear infinite;
+  animation: scroll-left 45s linear infinite;
+}
+
+@-moz-keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes scroll-left {
+  0% {
+    -webkit-transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100%); /* Browser bug fix */
+    -webkit-transform: translateX(100%); /* Browser bug fix */
+    transform: translateX(100%);
+  }
+  100% {
+    -moz-transform: translateX(-100%); /* Browser bug fix */
+    -webkit-transform: translateX(-100%); /* Browser bug fix */
+    transform: translateX(-100%);
+  }
+}
