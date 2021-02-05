@@ -75,7 +75,7 @@ a:hover {
 button {
   background-color: transparent;
   outline: none;
-  padding: 8px 12px;
+  padding: 15px 25px;
   border: transparent solid 1px;
   text-transform: uppercase;
   cursor: pointer;
@@ -97,16 +97,17 @@ button {
 .btn-secondary {
   background-color: var(--dark);
   color: var(--green);
+  border-color: var(--green);
 }
 
 .btn-secondary:hover {
-  border-color: var(--green);
+  border-color: var(--white);
 }
 
 p {
   font-family: "Inter", sans-serif;
   color: var(--white);
-  font-size: 16px;
+  font-size: 14px;
   font-size: 20px;
 }
 
@@ -192,6 +193,7 @@ section {
   border-bottom: transparent 3px solid;
   margin-left: 15px;
   padding: 10px 0;
+  font-size: 16px;
 }
 
 #home > div:last-child > .social-media > a:hover {
@@ -206,7 +208,7 @@ section {
   column-gap: 15px;
   padding: 50px;
   position: absolute;
-  top: 70vh;
+  top: 80vh;
   left: 0;
   z-index: 0;
   width: 100%;
@@ -234,6 +236,14 @@ section {
   border: var(--green) 0px solid;
 }
 
+.project:nth-child(1) {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
+    url("img/petgram\ mockup.jpeg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
 .project:hover {
   cursor: pointer;
   transition: 400ms ease-in-out;
@@ -250,7 +260,10 @@ section {
   font-size: 16px;
   margin-top: 10px;
   transition: 400ms ease;
-  background: -webkit-linear-gradient(var(--white), var(--dark));
+  background: -webkit-linear-gradient(
+    rgba(255, 255, 255, 8),
+    rgba(255, 255, 255, 0.2)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -261,7 +274,7 @@ section {
 
 #skills {
   text-align: center;
-  margin: 100vh auto;
+  margin: 120vh 0 50px;
 }
 
 #skills > h2 {
@@ -274,7 +287,7 @@ section {
 }
 
 .tech-stack {
-  height: 50px;
+  height: 90px;
   overflow: hidden;
   position: relative;
   background-color: var(--green);
@@ -288,10 +301,10 @@ section {
 }
 
 .tech-stack > div {
+  padding: 20px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 170%;
   height: 100%;
   line-height: 50px;
   text-align: center;
@@ -299,28 +312,7 @@ section {
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  /* Apply animation to this element */
-  -moz-animation: scroll-left 45s linear infinite;
-  -webkit-animation: scroll-left 45s linear infinite;
-  animation: scroll-left 45s linear infinite;
-}
-
-@-moz-keyframes scroll-left {
-  0% {
-    -moz-transform: translateX(100%);
-  }
-  100% {
-    -moz-transform: translateX(-100%);
-  }
-}
-
-@-webkit-keyframes scroll-left {
-  0% {
-    -webkit-transform: translateX(100%);
-  }
-  100% {
-    -webkit-transform: translateX(-100%);
-  }
+  animation: scroll-left 30s linear infinite;
 }
 
 @keyframes scroll-left {
@@ -334,4 +326,82 @@ section {
     -webkit-transform: translateX(-100%); /* Browser bug fix */
     transform: translateX(-100%);
   }
+}
+
+#certifications {
+  padding: 75px;
+}
+
+#certifications > h2 {
+  font-size: 46px;
+}
+
+#certifications > p {
+  width: 60%;
+}
+
+.courses-repository {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.courses-repository > ul {
+  list-style: none;
+}
+
+.courses-repository > ul > a > li {
+  font-size: 18px;
+  padding: 8px;
+  transition: 400ms ease;
+  border: var(--green) 1px solid;
+  padding: 10px 15px;
+}
+
+.courses-repository > ul > a > li:hover {
+  background-color: var(--green);
+  color: var(--dark);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  header > .menu {
+    display: none;
+  }
+
+  #home {
+    grid-template-columns: 1fr;
+    grid-template-rows: 90% auto;
+    text-align: center;
+  }
+
+  #home > div:first-child > p {
+    margin: auto;
+    width: 80%;
+  }
+
+  #projects {
+    position: initial;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 30% 25% 25%;
+  }
+
+  #projects > h2 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .project {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .project:nth-child(1) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 320px) {
 }
