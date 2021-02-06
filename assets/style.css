@@ -460,7 +460,7 @@ section {
   }
 
   #skills {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 
   #skills > p {
@@ -501,5 +501,102 @@ section {
 
   #contact > a {
     font-size: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 320px) {
+  header > h1 {
+    padding: 0;
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 10px;
+  }
+
+  h2 {
+    font-size: 28px !important;
+  }
+
+  p {
+    font-size: 16px !important;
+  }
+
+  #home {
+    height: 90vh;
+    padding: 0;
+    grid-template-rows: auto 5%;
+  }
+
+  #home > div:first-child > h2 {
+    font-size: 36px !important;
+  }
+
+  #home > div:first-child > p {
+    width: 90%;
+    margin: auto;
+  }
+
+  #home > div:last-child > .social-media {
+    margin: 30px;
+  }
+
+  #home > div:last-child > .social-media > a {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  #home > div:first-child > a {
+    display: none;
+  }
+
+  #projects {
+    grid-template-rows: 5% 40% 25% 25%;
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  .project {
+    margin: 0;
+    padding: 10px;
+  }
+
+  #more-projects > a {
+    font-size: 14px !important;
+  }
+
+  #skills {
+    margin: 100px 0 80px;
+  }
+
+  #skills > h2 {
+    font-size: 34px !important;
+  }
+
+  #certifications {
+    text-align: center;
+  }
+
+  #certifications > h2 {
+    font-size: 26px !important;
+  }
+
+  #contact {
+    margin: 30px auto;
+  }
+
+  #contact > h2 {
+    font-size: 24px !important;
+  }
+
+  #contact > a:first-of-type {
+    font-size: 14px;
+  }
+
+  #contact > a {
+    font-size: 14px;
   }
 }
