@@ -75,7 +75,7 @@ a:hover {
 button {
   background-color: transparent;
   outline: none;
-  padding: 15px 25px;
+  padding: 10px 15px;
   border: transparent solid 1px;
   text-transform: uppercase;
   cursor: pointer;
@@ -203,13 +203,11 @@ section {
 #projects {
   display: grid;
   grid-template-columns: 40% auto;
-  grid-template-rows: 32vh 120px 70vh;
+  grid-template-rows: 20vh 100px 70vh;
+  margin-top: -20vh;
   text-align: center;
   column-gap: 15px;
   padding: 50px;
-  position: absolute;
-  top: 80vh;
-  left: 0;
   z-index: 0;
   width: 100%;
 }
@@ -236,7 +234,7 @@ section {
   border: var(--green) 0px solid;
 }
 
-.project:nth-child(1) {
+.project:nth-child(2) {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
     url("img/petgram\ mockup.jpeg");
   background-repeat: no-repeat;
@@ -268,13 +266,30 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
-#projects > a:first-child {
+#projects > a:nth-child(2) {
   grid-row: 1 / 4;
 }
 
-#skills {
+#more-projects {
+  margin: 10px auto 0;
   text-align: center;
-  margin: 120vh 0 50px;
+}
+
+#more-projects .back-card {
+  font-size: 24px;
+  padding: 10px 30px;
+  border: var(--green) solid 1px;
+  transition: 400ms ease;
+}
+
+#more-projects .back-card:hover {
+  background: transparent;
+  color: var(--green);
+}
+
+#skills {
+  margin: 150px auto;
+  text-align: center;
 }
 
 #skills > h2 {
@@ -298,6 +313,7 @@ section {
   color: var(--dark);
   font-size: 24px;
   font-weight: normal;
+  white-space: nowrap;
 }
 
 .tech-stack > div {
@@ -313,6 +329,32 @@ section {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
   animation: scroll-left 30s linear infinite;
+}
+
+#contact {
+  width: 70%;
+  margin: auto;
+  padding: 25px 0;
+  text-align: center;
+}
+
+#contact > h2 {
+  font-size: 48px;
+}
+
+#contact > a:first-of-type {
+  padding: 50px;
+  color: var(--white);
+  display: block;
+  font-size: 40px;
+}
+
+#contact > a:first-of-type:hover {
+  color: var(--green);
+}
+
+#contact > a {
+  font-size: 30px;
 }
 
 @keyframes scroll-left {
@@ -333,11 +375,11 @@ section {
 }
 
 #certifications > h2 {
-  font-size: 46px;
+  font-size: 52px;
 }
 
 #certifications > p {
-  width: 60%;
+  width: 75%;
 }
 
 .courses-repository {
@@ -352,10 +394,9 @@ section {
 
 .courses-repository > ul > a > li {
   font-size: 18px;
-  padding: 8px;
   transition: 400ms ease;
   border: var(--green) 1px solid;
-  padding: 10px 15px;
+  padding: 15px;
 }
 
 .courses-repository > ul > a > li:hover {
@@ -365,14 +406,19 @@ section {
 
 /* Tablet */
 @media (max-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+
   header > .menu {
     display: none;
   }
 
   #home {
     grid-template-columns: 1fr;
-    grid-template-rows: 90% auto;
+    grid-template-rows: 80% auto;
     text-align: center;
+    gap: 0px;
   }
 
   #home > div:first-child > p {
@@ -380,28 +426,80 @@ section {
     width: 80%;
   }
 
+  #home > div:last-child {
+    align-items: center;
+  }
+
   #projects {
-    position: initial;
-    grid-template-columns: 1fr;
-    grid-template-rows: 20% 30% 25% 25%;
+    margin: 20px 0 40px;
+    grid-template-columns: 100vw;
+    grid-template-rows: 10% 40% 25% 25%;
+    height: 1500px;
+    row-gap: 15px;
+    padding: 50px 10px;
   }
 
   #projects > h2 {
-    grid-column: auto;
-    grid-row: auto;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  #projects > .project:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  #projects > .project:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
   }
 
   .project {
-    grid-column: auto;
-    grid-row: auto;
+    width: 95%;
+    margin: -40px 0 45px 8px;
   }
 
-  .project:nth-child(1) {
-    grid-column: auto;
-    grid-row: auto;
+  #skills {
+    margin-bottom: 50px;
   }
-}
 
-/* Mobile */
-@media (max-width: 320px) {
+  #skills > p {
+    width: 90%;
+  }
+
+  #certifications {
+    padding: 30px 25px;
+  }
+
+  #certifications > p {
+    width: 100%;
+  }
+
+  .courses-repository {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .courses-repository > ul {
+    width: 100%;
+  }
+
+  #contact {
+    margin: 100px auto;
+    padding: 0 25px;
+    width: 100%;
+  }
+
+  #contact > h2 {
+    font-size: 34px;
+  }
+
+  #contact > a:first-of-type {
+    font-size: 30px;
+    padding: 25px 0 0;
+  }
+
+  #contact > a {
+    font-size: 24px;
+  }
 }
