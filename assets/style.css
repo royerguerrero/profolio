@@ -462,7 +462,6 @@ section {
     grid-template-columns: 1fr;
     grid-template-rows: 80% auto;
     text-align: center;
-    gap: 0px;
   }
 
   #home > div:first-child > p {
@@ -584,7 +583,7 @@ section {
   }
 
   #home {
-    height: 90vh;
+    height: 80vh;
     padding: 0;
     grid-template-rows: auto 5%;
   }
@@ -609,7 +608,7 @@ section {
     padding: 0;
   }
 
-  #home > div:first-child > a {
+  #home > div:first-child > a:first-of-type {
     display: none;
   }
 
