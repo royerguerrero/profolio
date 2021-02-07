@@ -128,6 +128,10 @@ header > h1 {
   font-size: 30px;
 }
 
+.burger-button {
+  display: none;
+}
+
 .menu > ul {
   list-style: none;
   display: flex;
@@ -412,7 +416,29 @@ section {
   }
 
   header > .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     display: none;
+    justify-content: center;
+    align-items: center;
+    background: var(--dark);
+  }
+  
+  .menu > ul {
+    flex-direction: column;
+    text-align: center;
+    z-index: 0;
+  }
+  
+  .link {
+    font-size: 40px;
+  }
+
+  .burger-button {
+    z-index: 1;
   }
 
   #home {
@@ -429,6 +455,10 @@ section {
 
   #home > div:last-child {
     align-items: center;
+  }
+
+  .burger-button {
+    display: inline;
   }
 
   #projects {
@@ -508,12 +538,20 @@ section {
 /* Mobile */
 @media screen and (max-width: 600px) {
   header {
-    padding: 15px 10px;
+    padding: 15px 20px 15px 10px;
   }
   
   header > h1 {
     padding: 0;
-    font-size: 16px;
+    font-size: 18px;
+  }
+
+  .burger-button {
+    width: 28px !important;
+  }
+
+  .link {
+    font-size: 30px;
   }
 
   button {
