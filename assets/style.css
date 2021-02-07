@@ -101,6 +101,7 @@ button {
 }
 
 .btn-secondary:hover {
+  color: var(--white);
   border-color: var(--white);
 }
 
