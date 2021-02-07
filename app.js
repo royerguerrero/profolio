@@ -1,17 +1,32 @@
 const burgerButton = document.getElementsByClassName('burger-button')[0]
 const menu = document.querySelector('header > .menu') 
-let menuColapsed = false
+let menuCollapsed = false
+const menuLinks = document.getElementsByClassName('link')
+
+const openMenu = () => {
+    menuCollapsed = true
+    burgerButton.src = 'assets/img/close.svg'
+    burgerButton.style.width = '25px'
+    menu.style.display = 'flex'
+}
+
+const closeMenu = () => {
+    menuCollapsed = false
+    burgerButton.style.width = '35px'
+    burgerButton.src = 'assets/img/burger.svg'
+    menu.style.display = 'none'
+}
 
 burgerButton.addEventListener('click', () => {
-    if (menuColapsed == false) {
-        menuColapsed = true
-        burgerButton.src = 'assets/img/close.svg'
-        burgerButton.style.width = '25px'
-        menu.style.display = 'flex'
+    if (menuCollapsed == false) {
+        openMenu()
     } else {
-        menuColapsed = false
-        burgerButton.style.width = '35px'
-        burgerButton.src = 'assets/img/burger.svg'
-        menu.style.display = 'none'
+        closeMenu()
     }
-})  
+})
+
+for (let i = 0; i < menuLinks.length; i++) {
+    menuLinks[i].addEventListener('click', () => {
+        closeMenu()
+    })
+}
