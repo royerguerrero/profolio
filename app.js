@@ -18,7 +18,7 @@ const closeMenu = () => {
 }
 
 burgerButton.addEventListener('click', () => {
-    if (menuCollapsed == false) {
+    if (menuCollapsed === false) {
         openMenu()
     } else {
         closeMenu()
@@ -27,6 +27,8 @@ burgerButton.addEventListener('click', () => {
 
 for (let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener('click', () => {
-        closeMenu()
+        if (menuCollapsed === true) {
+            closeMenu()
+        }
     })
 }
