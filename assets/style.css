@@ -353,10 +353,14 @@ section {
 }
 
 #contact {
-  width: 70%;
   margin: auto;
   padding: 25px 0;
   text-align: center;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #contact > h2 {
@@ -377,6 +381,25 @@ section {
 #contact > a {
   font-size: 30px;
   transition: 400ms;
+}
+
+.more-projects__container {
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  width: 95%;
+  margin: auto;
+  display: none;
+}
+
+.more-projects__container--show {
+  display: grid !important;
+}
+
+.more-projects__container > .project {
+  grid-row: initial;
+  height: 600px;
 }
 
 @keyframes scroll-left {

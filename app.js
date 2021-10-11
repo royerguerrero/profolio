@@ -34,3 +34,7 @@ for (let i = 0; i < menuLinks.length; i++) {
     }
   });
 }
+
+const seeMoreProjectsButton = document.querySelector('#see-more-projects')
+const seeMoreProjectsContent = document.querySelector('.more-projects__container')
+seeMoreProjectsButton.addEventListener('click', () => seeMoreProjectsContent.classList.toggle('more-projects__container--show'))
